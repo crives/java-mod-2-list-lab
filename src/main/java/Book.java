@@ -4,7 +4,6 @@ public class Book {
     public int numPages;
 
     // Created getters and setters so class is not so empty
-
     public Book(String title, String genre, int numPages) {
         this.title = title;
         this.genre = genre;

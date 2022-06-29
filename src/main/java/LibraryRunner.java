@@ -23,6 +23,8 @@ public class LibraryRunner {
 
     public static Scanner sc = new Scanner(System.in);
     public static boolean repeat = true;
+    public static String addBookMsg = "\nWould you like to add a book? (Type 'yes' or 'no'!)";
+    public static String addBookMsgAgain = "\nWould you like to add another book? (Type 'yes' or 'no'!)";
     public static void main(String[] args) {
 
         System.out.println("\nWelcome to the Virtual Book Library, where you can create books!");
@@ -33,7 +35,8 @@ public class LibraryRunner {
         System.out.println(".");
         
         while (repeat) {
-            System.out.println("\nWould you like to add a book? (Type 'yes' or 'no'!)");
+            addBookMsg = Library.bookList.isEmpty() ? addBookMsg : addBookMsgAgain;
+            System.out.println(addBookMsg);
             String addBookAnswer = sc.nextLine();
 
             boolean cont = addBookAnswer.toLowerCase().equals("yes");
